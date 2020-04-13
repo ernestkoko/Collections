@@ -4,30 +4,37 @@ import java.util.*;
 
 //Maps contain key value pairs
 
-public class MapExample {
+public class SortExample {
 
     public static void main(String[] args) {
 
         Person donDraper = new Person("Don Draper", 89);
         Person peggyOlson = new Person("Peggy olson", 68);
-        Map<String, Person> madMen = new HashMap<>();
-        madMen.put(donDraper.getName(), donDraper);
-        madMen.put(peggyOlson.getName(), peggyOlson);
+        Person bertCooper = new Person("Bert Cooper", 100);
+        List<Person> madMen = new ArrayList<>();
+        madMen.add(donDraper);
+        madMen.add(peggyOlson);
+        madMen.add(bertCooper);
 
-        //looping over madMen and returning the Keys
-        for (String name: madMen.keySet()){
-            System.out.println(name);
-        }
-        //looping and returing the person
-        for (Person person: madMen.values()){
-            System.out.println(person);
-        }
+        System.out.println(madMen);
 
-        //looping and returning both. We use the Entry element
-        for (Map.Entry<String, Person> entry: madMen.entrySet()){
-            System.out.println(entry);
+        Collections.sort(madMen, new AgeComparator());
+        System.out.println(madMen);
 
-        }
+//        //looping over madMen and returning the Keys
+//        for (String name: madMen.keySet()){
+//            System.out.println(name);
+//        }
+//        //looping and returing the person
+//        for (Person person: madMen.values()){
+//            System.out.println(person);
+//        }
+//
+//        //looping and returning both. We use the Entry element
+//        for (Map.Entry<String, Person> entry: madMen.entrySet()){
+//            System.out.println(entry);
+//
+//        }
 
 
 //        Set<Person> madMen = new HashSet<>();
