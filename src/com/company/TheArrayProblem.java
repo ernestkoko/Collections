@@ -13,6 +13,7 @@ public class TheArrayProblem {
         System.out.println(Arrays.toString(madMen));
 
         Person bertCooper = new Person("Bert Cooper", 100);
+        // adds 1 person to the array
         madMen= add(bertCooper, madMen);
 
         System.out.println(Arrays.toString(madMen));
