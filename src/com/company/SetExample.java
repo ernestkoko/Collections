@@ -1,43 +1,53 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
-public class ListExample {
+// set contains unique items
+// set is not ordered
+
+public class SetExample {
 
     public static void main(String[] args) {
 
         Person donDraper = new Person("Don Draper", 89);
         Person peggyOlson = new Person("Peggy olson", 68);
 
-       //List is an interface and ArrayList implements it(List)
-        List<Person> madMen = new ArrayList<Person>();
+        Set<Person> madMen = new HashSet<>();
+        madMen.contains(donDraper); // returns boolean
+
         madMen.add(donDraper);
         madMen.add(peggyOlson);
-
-        System.out.println(madMen);
-        madMen.add(new Person("Book Kepper", 100));
-        System.out.println();
-
-        System.out.println("Using the forEach loop of arrow function: ");
-        madMen.forEach((n) -> System.out.println(n));
-
-        System.out.println("Using the forEach loop normal: ");
+        madMen.add(donDraper);
         for (Person person: madMen){
             System.out.println(person);
         }
 
-
-
-        System.out.println("Using the Iterator: ");
-
-        Iterator<Person> iterator = madMen.iterator();
-        while (iterator.hasNext()){
-            Person person = iterator.next();
-            System.out.println(person);
-        }
+//       List is an interface and ArrayList implements it(List)
+//        List<Person> madMen = new ArrayList<Person>();
+//        madMen.add(donDraper);
+//        madMen.add(peggyOlson);
+//
+//        System.out.println(madMen);
+//        madMen.add(new Person("Book Kepper", 100));
+//        System.out.println();
+//
+//        System.out.println("Using the forEach loop of arrow function: ");
+//        madMen.forEach((n) -> System.out.println(n));
+//
+//        System.out.println("Using the forEach loop normal: ");
+//        for (Person person: madMen){
+//            System.out.println(person);
+//        }
+//
+//
+//
+//        System.out.println("Using the Iterator: ");
+//
+//        Iterator<Person> iterator = madMen.iterator();
+//        while (iterator.hasNext()){
+//            Person person = iterator.next();
+//            System.out.println(person);
+//        }
 
 //        for ( i : madMen){
 //           // Person person = madMen.get(i);
