@@ -2,25 +2,43 @@ package com.company;
 
 import java.util.*;
 
-// set contains unique items
-// set is not ordered
+//Maps contain key value pairs
 
-public class SetExample {
+public class MapExample {
 
     public static void main(String[] args) {
 
         Person donDraper = new Person("Don Draper", 89);
         Person peggyOlson = new Person("Peggy olson", 68);
+        Map<String, Person> madMen = new HashMap<>();
+        madMen.put(donDraper.getName(), donDraper);
+        madMen.put(peggyOlson.getName(), peggyOlson);
 
-        Set<Person> madMen = new HashSet<>();
-        madMen.contains(donDraper); // returns boolean
-
-        madMen.add(donDraper);
-        madMen.add(peggyOlson);
-        madMen.add(donDraper);
-        for (Person person: madMen){
+        //looping over madMen and returning the Keys
+        for (String name: madMen.keySet()){
+            System.out.println(name);
+        }
+        //looping and returing the person
+        for (Person person: madMen.values()){
             System.out.println(person);
         }
+
+        //looping and returning both. We use the Entry element
+        for (Map.Entry<String, Person> entry: madMen.entrySet()){
+            System.out.println(entry);
+
+        }
+
+
+//        Set<Person> madMen = new HashSet<>();
+//        madMen.contains(donDraper); // returns boolean
+//
+//        madMen.add(donDraper);
+//        madMen.add(peggyOlson);
+//        madMen.add(donDraper);
+//        for (Person person: madMen){
+//            System.out.println(person);
+//        }
 
 //       List is an interface and ArrayList implements it(List)
 //        List<Person> madMen = new ArrayList<Person>();
