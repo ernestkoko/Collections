@@ -5,6 +5,7 @@ import java.util.Comparator;
 public class AgeComparator implements Comparator<Person> {
     @Override
     public int compare(Person left, Person right) {
-        return Integer.compare(left.getAge(), right.getAge());
+        //Multiplying by -1 flips everything in the reverse order
+        return  Integer.compare(left.getAge(), right.getAge());
     }
 }

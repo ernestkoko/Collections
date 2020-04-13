@@ -4,7 +4,7 @@ import java.util.*;
 
 //Maps contain key value pairs
 
-public class SortingAnonymousClassExample {
+public class SortExample {
 
     public static void main(String[] args) {
 
@@ -18,13 +18,7 @@ public class SortingAnonymousClassExample {
 
         System.out.println(madMen);
 
-       //using anonymous class
-        Collections.sort(madMen, new Comparator<Person>() {
-            @Override
-            public int compare(Person left, Person right) {
-                return Integer.compare(left.getAge(), right.getAge());
-            }
-        });
+        Collections.sort(madMen, new ReverseComparator<>(new AgeComparator()));
         System.out.println(madMen);
 
 //        //looping over madMen and returning the Keys
