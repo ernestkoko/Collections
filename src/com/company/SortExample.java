@@ -10,16 +10,36 @@ public class SortExample {
 
         Person donDraper = new Person("Don Draper", 89);
         Person peggyOlson = new Person("Peggy olson", 68);
-        Person bertCooper = new Person("Bert Cooper", 100);
+        Person bertCooper = new Person("Bert Cooper", 10);
         List<Person> madMen = new ArrayList<>();
         madMen.add(donDraper);
         madMen.add(peggyOlson);
         madMen.add(bertCooper);
 
-        System.out.println(madMen);
+        final Person youngestCastMember = (Person) min(madMen, new AgeComparator());
 
-        Collections.sort(madMen, new ReverseComparator<>(new AgeComparator()));
-        System.out.println(madMen);
+           System.out.println(youngestCastMember);
+    }
+
+
+        private static <T> Object min(List<T> values, Comparator<T> comparator) {
+            if (values.isEmpty()) {
+                throw new IllegalArgumentException("List is empty, can not find min");
+            }
+            T lowestElement = values.get(0);
+            for (int i =1; i<values.size(); i++){
+                final T  element = values.get(i);
+                if (comparator.compare(element, lowestElement) <0){
+                    lowestElement = element;
+                }
+
+            }
+            return lowestElement;
+        }
+    }
+
+
+
 
 //        //looping over madMen and returning the Keys
 //        for (String name: madMen.keySet()){
@@ -98,6 +118,6 @@ public class SortExample {
 //        return array;
 //
 //    }
-    }
 
-}
+
+
